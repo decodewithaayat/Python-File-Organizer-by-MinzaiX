@@ -2,9 +2,20 @@ import os
 import shutil
 
 
-# ==============================
-# FILE ORGANIZER
-# ==============================
+# ==================================================
+#              PYTHON FILE ORGANIZER
+#              Developed by MinzaiX
+#              GitHub: decodewithaayat
+# ==================================================
+
+print("""
+==================================================
+             PYTHON FILE ORGANIZER
+             Developed by MinzaiX
+             GitHub: decodewithaayat
+==================================================
+""")
+
 
 FILE_CATEGORIES = {
     # Documents
@@ -66,7 +77,7 @@ FILE_CATEGORIES = {
     "exe": "Executables",
     "msi": "Executables",
 
-    # Others
+    # Disk Images
     "iso": "Disk Images",
 }
 
@@ -122,10 +133,6 @@ def organize_files(directory):
     skipped_files = 0
     total_size = 0
 
-    print("\n" + "=" * 50)
-    print("        PYTHON FILE ORGANIZER")
-    print("=" * 50)
-
     # Existing folders created by the organizer
     organizer_folders = set(FILE_CATEGORIES.values())
     organizer_folders.add("Others")
@@ -138,15 +145,11 @@ def organize_files(directory):
         if not os.path.isfile(file_path):
             continue
 
-        # Get extension
+        # Get file extension
         extension = os.path.splitext(filename)[1].lower().replace(".", "")
 
         # Determine category
         category = FILE_CATEGORIES.get(extension, "Others")
-
-        # Avoid processing organizer folders if necessary
-        if filename in organizer_folders:
-            continue
 
         # Create destination folder
         destination_folder = os.path.join(directory, category)
@@ -159,10 +162,10 @@ def organize_files(directory):
                 filename
             )
 
-            # Handle duplicate names
+            # Handle duplicate filenames
             destination = get_unique_path(destination)
 
-            # Get size before moving
+            # Get file size before moving
             file_size = get_file_size(file_path)
 
             # Move file
@@ -183,8 +186,9 @@ def organize_files(directory):
             skipped_files += 1
             print(f"⚠ Error with {filename}: {error}")
 
+    # Summary
     print("\n" + "=" * 50)
-    print("              SUMMARY")
+    print("                    SUMMARY")
     print("=" * 50)
 
     print(f"Files moved   : {moved_files}")
@@ -192,6 +196,8 @@ def organize_files(directory):
     print(f"Total size    : {total_size / 1024:.2f} MB")
 
     print("\n✅ Organization completed!")
+    print("Developed by MinzaiX")
+    print("GitHub: decodewithaayat")
 
 
 def main():
