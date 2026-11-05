@@ -99,4 +99,4 @@ Downloads/
 
 **Shaikh Aayat Ullah** (MinzaiX)
 
-[GitHub](https://github.com/decodewithaayat) • [LinkedIn](https://www.linkedin.com/in/shaikh-aayat-a34797392)
+[GitHub](https://github.com/decodewithaayat) • [LinkedIn](http://linkedin.com/in/decodewithaayat)
